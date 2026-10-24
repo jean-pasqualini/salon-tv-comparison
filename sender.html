@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Salon · Télécommande Cast</title><link rel="stylesheet" href="sender.css"></head>
+<body><main>
+  <p class="eyebrow">SALON / CHROMECAST ULTRA</p><h1>Votre télécommande.</h1>
+  <p>Ouvrez cette page dans Chrome sur ordinateur ou Android, sur le même réseau que « SALON TV ».</p>
+  <form id="setup"><label for="app-id">Identifiant de l’application Cast</label><div class="setup-row"><input id="app-id" required pattern="[A-Fa-f0-9]{8}" maxlength="8" placeholder="Ex. AB12CD34" autocomplete="off"><button type="submit">Configurer</button></div><small>Identifiant fourni par la console Google Cast après inscription. Ce n’est pas le numéro de série de la Chromecast.</small></form>
+  <div class="connection"><button id="connect" disabled>Choisir la Chromecast</button><button id="disconnect" disabled>Arrêter la session</button></div>
+  <p id="status" role="status">Renseignez l’identifiant de votre application pour commencer.</p>
+  <fieldset id="remote" disabled><legend>Commandes</legend><div class="pad"><button data-key="up" class="up" aria-label="Haut">↑</button><button data-key="left" class="left" aria-label="Gauche">←</button><button data-key="ok" class="ok">OK</button><button data-key="right" class="right" aria-label="Droite">→</button><button data-key="down" class="down" aria-label="Bas">↓</button></div><button data-key="back" class="back">← Retour</button></fieldset>
+  <p id="screen-state">Aucune session connectée.</p><p id="latency">Aller-retour des commandes : —</p>
+  <p class="note">Cette mesure inclut l’envoi et l’accusé de réception. Elle ne mesure pas le délai d’affichage de la TV.</p>
+  <p><a href="compare.html">Protocole de comparaison Samsung / Chromecast</a></p>
+  <p class="note">Sur iPhone/iPad, cette télécommande web Cast n’est pas prise en charge : utilisez Chrome sur le Mac pour ce test.</p>
+</main><script src="sender.js"></script><script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script></body></html>

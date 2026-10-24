@@ -1,0 +1,30 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body { background: #211e1a; color: #f7f0e5; font: 1.5vw Arial, sans-serif; }
+[hidden] { display: none !important; }
+.landscape { position: absolute; inset: 0; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; background: radial-gradient(ellipse at 77% 36%, #805b40 0%, #393026 40%, #211e1a 80%); }
+.sun { position: absolute; width: 18vw; height: 18vw; border-radius: 50%; right: 12vw; top: 15vh; background: #d7ac77; opacity: .75; }
+.hill { position: absolute; width: 110vw; height: 65vh; border-radius: 50% 50% 0 0; transform: rotate(-12deg); }
+.far { background: #594333; left: 30vw; top: 38vh; }
+.near { background: #2c2b26; left: -20vw; top: 62vh; transform: rotate(12deg); }
+body.forest .landscape { background: radial-gradient(ellipse at 77% 36%, #466354, #182d27 70%); }
+body.forest .sun { background: #b0c7a1; } body.forest .far { background: #345143; } body.forest .near { background: #1e352e; }
+body.night .landscape { background: radial-gradient(ellipse at 77% 36%, #39445e, #171d2b 70%); }
+body.night .sun { background: #a7b8d6; } body.night .far { background: #303b52; } body.night .near { background: #202738; }
+main { position: relative; height: 100%; padding: 5vh 5.5vw; background: linear-gradient(90deg, rgba(12,15,14,.42), transparent); }
+header, footer { display: flex; align-items: center; justify-content: space-between; }
+.brand { font-size: 3vw; font-weight: bold; letter-spacing: -.15vw; }.dot { color: #dab885; }
+.edition { font-size: .9vw; letter-spacing: .2vw; margin-right: auto; margin-left: 3vw; opacity: .72; }
+#mini-clock { font-size: 1.7vw; font-variant-numeric: tabular-nums; }
+.screen { padding-top: 8vh; }.eyebrow { letter-spacing: .23vw; font-size: 1vw; text-transform: uppercase; color: #e5d1b1; }
+h1 { font-size: 4.4vw; font-weight: normal; margin: 2vh 0; letter-spacing: -.16vw; } .intro { font-size: 1.6vw; color: #e0d6c9; }
+.cards { display: flex; margin-top: 6vh; }.card { width: 28vw; height: 26vh; margin-right: 2vw; padding: 2vw; text-align: left; position: relative; background: rgba(24,25,23,.8); border: 2px solid rgba(255,255,255,.18); border-radius: 1.1vw; }
+.card:last-child { margin-right: 0; }.card span, .card strong { display: block; }.card-number { font-size: .9vw; letter-spacing: .1vw; color: #d1bda1; margin-bottom: 3vh; }.card strong { font-size: 2.2vw; font-weight: normal; margin-bottom: 1.5vh; }.card > span:not(.card-number):not(.card-arrow):not(.swatch) { font-size: 1.2vw; color: #ddd4c8; }.card .card-arrow { position: absolute; right: 1.7vw; top: 1.5vw; font-size: 1.8vw; }
+button { color: inherit; background: rgba(26,28,26,.9); border: 2px solid #80796c; border-radius: .6vw; padding: 1.2vh 1.4vw; font: inherit; cursor: pointer; }
+button:focus { outline: 3px solid #f3d7a6; outline-offset: 5px; background: #4b4336; box-shadow: 0 0 0 8px rgba(0,0,0,.12); }
+button[aria-pressed="true"] { border-color: #f3d7a6; }.button-row { display: flex; justify-content: center; margin: 2vh 0; }.button-row button { margin: 0 .6vw; }
+.centered { text-align: center; padding-top: 4vh; }.large-number { font-size: 12vw; font-variant-numeric: tabular-nums; letter-spacing: -.5vw; margin: 1vh 0; }
+.note, #save-state { font-size: 1.1vw; color: #ddd4c8; margin-top: 3vh; }.swatch { width: 3vw; height: 3vw; border-radius: 50%; margin-bottom: 2vh; }.swatch.dune { background: #d7ac77; }.swatch.forest { background: #8daa85; }.swatch.night { background: #99aace; }
+footer { position: absolute; bottom: 5vh; left: 5.5vw; right: 5.5vw; font-size: 1vw; color: #ded7cc; }kbd { font: inherit; display: inline-block; border: 1px solid #817e74; padding: .4vh .5vw; border-radius: .3vw; margin-left: 1vw; margin-right: .5vw; }kbd:first-child { margin-left: 0; }#timer-badge { font-size: .8vw; letter-spacing: .1vw; }
+.overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.8); }.dialog { width: 48vw; background: #282923; padding: 3vw; border: 1px solid #80796c; border-radius: 1.2vw; text-align: center; }.dialog h2 { font-size: 3vw; font-weight: normal; }
+@media (max-aspect-ratio: 4/3) { h1 { font-size: 5vw; } .card { height: 22vh; } .edition { display: none; } body { font-size: 2.5vw; } .card strong { font-size: 3vw; } .card-number, .eyebrow, footer, .note, #save-state { font-size: 1.6vw; } }

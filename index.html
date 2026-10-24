@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>Salon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="landscape" aria-hidden="true"><div class="sun"></div><div class="hill far"></div><div class="hill near"></div></div>
+  <main>
+    <header><span class="brand">salon<span class="dot">.</span></span><span class="edition">VOTRE PETIT ESPACE À LA MAISON</span><span id="mini-clock"></span></header>
+    <section id="home" class="screen">
+      <p class="eyebrow" id="date"></p>
+      <h1 id="greeting">Bienvenue chez vous.</h1>
+      <p class="intro">Un instant pour ralentir.</p>
+      <div class="cards">
+        <button class="card" data-open="clock"><span class="card-number">01 / L’INSTANT</span><strong>Horloge</strong><span>L’heure, en grand.</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="card" data-open="timer"><span class="card-number">02 / LA PAUSE</span><strong>Minuteur</strong><span>Prenez le temps qu’il faut.</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+        <button class="card" data-open="settings"><span class="card-number">03 / L’ATMOSPHÈRE</span><strong>Ambiance</strong><span>Choisissez vos couleurs.</span><span class="card-arrow" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+    <section id="clock" class="screen centered" hidden>
+      <p class="eyebrow">PROFITEZ DE L’INSTANT</p><h1 id="large-clock" class="large-number"></h1><p id="clock-date"></p>
+      <button data-home>Revenir à l’accueil</button>
+    </section>
+    <section id="timer" class="screen centered" hidden>
+      <p class="eyebrow">UNE PAUSE POUR VOUS</p><h1 id="countdown" class="large-number">05:00</h1>
+      <p id="timer-state" role="status">Choisissez une durée.</p>
+      <div class="button-row" aria-label="Durée"><button data-minutes="5" aria-pressed="true">5 min</button><button data-minutes="15" aria-pressed="false">15 min</button><button data-minutes="25" aria-pressed="false">25 min</button></div>
+      <div class="button-row"><button id="toggle-timer">Démarrer</button><button id="reset-timer">Réinitialiser</button><button data-home>Accueil</button></div>
+      <p class="note">Signal visuel uniquement. Gardez l’application ouverte.</p>
+    </section>
+    <section id="settings" class="screen" hidden>
+      <p class="eyebrow">À VOTRE IMAGE</p><h1>Changez d’atmosphère.</h1><p class="intro">Une palette pour chaque moment.</p>
+      <div class="cards">
+        <button class="card" data-theme="dune" aria-pressed="true"><span class="swatch dune"></span><strong>Dune</strong><span>Chaleureux & lumineux</span></button>
+        <button class="card" data-theme="forest" aria-pressed="false"><span class="swatch forest"></span><strong>Forêt</strong><span>Profond & paisible</span></button>
+        <button class="card" data-theme="night" aria-pressed="false"><span class="swatch night"></span><strong>Nuit</strong><span>Doux & discret</span></button>
+      </div><p id="save-state" role="status">Votre choix est enregistré sur cet appareil.</p><button data-home>Revenir à l’accueil</button>
+    </section>
+    <footer><span><kbd>← ↑ ↓ →</kbd> Naviguer <kbd>OK</kbd> Choisir <kbd>Retour</kbd> Revenir</span><span id="timer-badge">FAIT POUR LE SALON</span></footer>
+  </main>
+  <div id="exit-dialog" class="overlay" role="dialog" aria-modal="true" aria-labelledby="exit-title" hidden><div class="dialog"><p class="eyebrow">À BIENTÔT</p><h2 id="exit-title">Quitter Salon ?</h2><p>Un minuteur en cours sera arrêté.</p><div class="button-row"><button id="stay">Rester</button><button id="quit">Quitter</button></div><p id="exit-message" role="status"></p></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
